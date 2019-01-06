@@ -6,6 +6,9 @@ import { PlaylistsComponent } from './playlists/playlists.component';
 import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.component';
 import { PlaylistAddComponent } from './playlist-add/playlist-add.component';
 import { PlaylistEditComponent } from './playlist-edit/playlist-edit.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -38,6 +41,10 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule,
     PlaylistsComponent,
     PlaylistDetailComponent,
     PlaylistAddComponent,
