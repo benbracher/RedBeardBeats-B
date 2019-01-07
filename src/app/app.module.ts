@@ -48,7 +48,8 @@ const routes: Routes = [
     PlaylistsComponent,
     PlaylistDetailComponent,
     PlaylistAddComponent,
-    PlaylistEditComponent
+    PlaylistEditComponent,
+    
   ],
   imports: [
     BrowserModule
