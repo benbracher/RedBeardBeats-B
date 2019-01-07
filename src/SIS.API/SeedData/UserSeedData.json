@@ -1,0 +1,26 @@
+﻿
+//TODO: Make these work right with our DB. Replicate about 8 users.
+[
+  {
+    "Username": "jennaikins",
+    "Email": "jenn@jenn.com",
+    "Phone": "123-123-1234",
+    "Gender": "female",
+    "Password": "password",
+    "Street": "123 Street",
+    "City": "Westfield",
+    "State": "IN",
+    "Created": "2017-03-25"
+  },
+  {
+    "Username": "joe",
+    "Email": "joe@joe.com",
+    "Phone": "123-123-1234",
+    "Gender": "male",
+    "Password": "password",
+    "Street": "123 Street",
+    "City": "Westfield",
+    "State": "IN",
+    "Created": "2018-04-25"
+  }
+]
