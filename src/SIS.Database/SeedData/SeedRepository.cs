@@ -27,6 +27,7 @@ namespace RedStarter.Database.SeedData
                 {
                     new RoleEntity{Name = "User"},
                     new RoleEntity{Name = "Admin"},
+                    new RoleEntity{Name = "Guest"},
                 };
 
                 foreach (var role in roles)
@@ -36,21 +37,30 @@ namespace RedStarter.Database.SeedData
 
                 var adminUser = new UserEntity { UserName = "admin" };
                 var user = new UserEntity { UserName = "user" };
+                var guest = new UserEntity { UserName = "guest" };
 
                 #region
                 IdentityResult adminResult = _userManager.CreateAsync(adminUser, "password").Result;
-                IdentityResult applicantResult = _userManager.CreateAsync(user, "password").Result;
+                IdentityResult userResult = _userManager.CreateAsync(user, "password").Result;
+                IdentityResult guestResult = _userManager.CreateAsync(guest, "password").Result;
+
                 #endregion
                 if (adminResult.Succeeded)
                 {
                     var admin = _userManager.FindByNameAsync("admin").Result;
                     _userManager.AddToRolesAsync(admin, new[] { "Admin" }).Wait();
                 }
-                if (applicantResult.Succeeded)
+                if (userResult.Succeeded)
                 {
                     var applicant = _userManager.FindByNameAsync("user").Result;
                     _userManager.AddToRolesAsync(applicant, new[] { "User" }).Wait();
                 }
+                if (guestResult.Succeeded)
+                {
+                    var applicant = _userManager.FindByNameAsync("guest").Result;
+                    _userManager.AddToRolesAsync(applicant, new[] { "Guest" }).Wait();
+                }
+
             }
         }
     }
